@@ -1,7 +1,9 @@
 /**
- * OGS Plus - background service worker
- * content script로부터 알림 요청을 받아 chrome.notifications로 데스크탑 알림을 표시한다.
- */
+
+* OGS Plus - background service worker
+
+* Receives notification requests from content scripts and displays desktop notifications via chrome.notifications.
+*/
 const ICON = chrome.runtime.getURL("icons/icon128.png");
 
 chrome.runtime.onMessage.addListener((msg) => {
