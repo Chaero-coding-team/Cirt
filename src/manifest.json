@@ -53,29 +53,30 @@
       "https://*.online-go.com/*",
       "https://beta.online-go.com/*"
     ],
-    "js": [
-      "lib/browser-polyfill.js",
-      "lib/storage.js",
-      "i18n/translations.js",
-      "content/utils.js",
-      "content/notice.js",
-      "content/settings-tab.js",
-      "content/voice-commentary.js",
-      "content/image-preview.js",
-      "content/custom-css.js",
-      "content/about-heading.js",
-      "content/beta-link.js",
-      "content/profile-stats.js",
-      "content/sgf-upload.js",
-      "content/bot-rank-request.js",
-      "content/notifications-watcher.js",
-      "content/main.js"
-    ],
-    "css": [
-      "content/content.css"
-    ],
-    "run_at": "document_idle",
-    "all_frames": false
+"js": [
+  "lib/browser-polyfill.js",
+  "lib/storage.js",
+  "i18n/translations.js",
+  "content/utils.js",
+  "content/notice.js",
+  "content/settings-tab.js",
+  "content/voice-commentary.js",
+  "content/image-preview.js",
+  "content/custom-css.js",
+  "content/about-heading.js",
+  "content/beta-link.js",
+  "content/profile-stats.js",
+  "content/sgf-upload.js",
+  "content/bot-rank-request.js",
+  "content/notifications-watcher.js",
+  "content/main.js"
+],
+"css": [
+  "content/content.css"
+],
+"run_at": "document_idle",
+"all_frames": false
+
   }
 ],
 
