@@ -1,0 +1,465 @@
+/* ==========================================================================
+   OGS Plus - content script 공통 스타일
+   ========================================================================== */
+
+/* ---- 토스트 알림 ---- */
+#ogsplus-toast-container {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+.ogsplus-toast {
+  background: #1f2937;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  max-width: 320px;
+}
+.ogsplus-toast-show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.ogsplus-toast-success { background: #15803d; }
+.ogsplus-toast-error { background: #b91c1c; }
+.ogsplus-toast-info { background: #1f2937; }
+
+/* ---- Settings 탭: Plus Settings 그룹 아이콘 강조 ---- */
+.SettingsGroup.ogsplus-group i.ogsplus-icon {
+  margin-right: 6px;
+  color: #2f80ed;
+}
+
+/* ---- Plus Settings 컨텐츠 페이지 ---- */
+.ogsplus-settings-page {
+  padding: 4px 2px 40px 2px;
+  max-width: 780px;
+}
+.ogsplus-settings-page h2.ogsplus-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6em;
+  margin-bottom: 4px;
+}
+.ogsplus-settings-page .ogsplus-tagline {
+  opacity: 0.7;
+  margin-bottom: 22px;
+  font-size: 0.95em;
+}
+.ogsplus-master-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--shade1, rgba(120,120,120,0.08));
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+}
+.ogsplus-master-toggle-row .ogsplus-master-label {
+  font-weight: 700;
+  font-size: 1.05em;
+}
+.ogsplus-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+.ogsplus-lang-row select {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.ogsplus-section {
+  border: 1px solid var(--shade2, rgba(120,120,120,0.18));
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  transition: opacity 0.2s ease;
+}
+.ogsplus-section.ogsplus-disabled {
+  opacity: 0.55;
+}
+.ogsplus-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.ogsplus-section-header h3 {
+  margin: 0;
+  font-size: 1.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ogsplus-section-desc {
+  font-size: 0.88em;
+  opacity: 0.75;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+.ogsplus-section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ogsplus-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.ogsplus-row label.ogsplus-inline-label {
+  font-size: 0.9em;
+  min-width: 140px;
+}
+.ogsplus-row select,
+.ogsplus-row input[type="text"] {
+  padding: 5px 8px;
+  border-radius: 6px;
+}
+
+/* 토글 스위치 */
+.ogsplus-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.ogsplus-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.ogsplus-switch .ogsplus-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #b0b0b0;
+  transition: 0.2s;
+  border-radius: 24px;
+}
+.ogsplus-switch .ogsplus-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+.ogsplus-switch input:checked + .ogsplus-slider {
+  background-color: #2f80ed;
+}
+.ogsplus-switch input:checked + .ogsplus-slider:before {
+  transform: translateX(20px);
+}
+
+.ogsplus-textarea {
+  width: 100%;
+  min-height: 140px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 12.5px;
+  padding: 10px;
+  border-radius: 8px;
+  resize: vertical;
+}
+.ogsplus-btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.ogsplus-btn {
+  padding: 7px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--shade3, rgba(120,120,120,0.3));
+  background: var(--shade0, #fff);
+  cursor: pointer;
+  font-size: 0.88em;
+}
+.ogsplus-btn.primary {
+  background: #2f80ed;
+  color: white;
+  border-color: #2f80ed;
+}
+.ogsplus-btn.primary:hover { background: #1c6fe0; }
+.ogsplus-btn:hover { opacity: 0.85; }
+.ogsplus-hint {
+  font-size: 0.8em;
+  opacity: 0.65;
+}
+.ogsplus-css-status {
+  font-size: 0.82em;
+  padding: 4px 0;
+}
+.ogsplus-css-status.approved { color: #15803d; }
+
+.ogsplus-footer-note {
+  text-align: center;
+  font-size: 0.82em;
+  opacity: 0.55;
+  margin-top: 26px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--shade2, rgba(120,120,120,0.2));
+}
+
+/* ---- Beta 상단바 링크 ---- */
+.ogsplus-beta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  font-weight: 600;
+  font-size: 0.85em;
+  color: #f59e0b !important;
+  border: 1px solid #f59e0b;
+  border-radius: 20px;
+  margin: 0 6px;
+  height: 26px;
+  align-self: center;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.ogsplus-beta-link:hover {
+  background: #f59e0b;
+  color: #1f2937 !important;
+}
+
+/* ---- 음성 해설 인디케이터 ---- */
+.ogsplus-voice-indicator {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999999;
+  background: #1f2937;
+  color: #fff;
+  padding: 10px 16px 10px 12px;
+  border-radius: 30px;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+.ogsplus-voice-indicator.active {
+  display: flex;
+}
+.ogsplus-voice-indicator .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: ogsplus-pulse 1s infinite;
+}
+@keyframes ogsplus-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- 채팅 이미지 미리보기 ---- */
+.ogsplus-img-preview-wrap {
+  display: block;
+  margin-top: 4px;
+}
+.ogsplus-img-preview {
+  max-width: 220px;
+  max-height: 180px;
+  border-radius: 8px;
+  border: 1px solid rgba(120,120,120,0.3);
+  cursor: zoom-in;
+  display: block;
+}
+.ogsplus-img-preview-badge {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 2px;
+}
+.ogsplus-img-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.ogsplus-img-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 6px;
+}
+
+/* ---- 프로필 승률 위젯 ---- */
+.ogsplus-winrate-card {
+  border: 1px solid var(--shade2, rgba(120,120,120,0.18));
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.ogsplus-winrate-ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.ogsplus-winrate-ring svg { width: 64px; height: 64px; transform: rotate(-90deg); }
+.ogsplus-winrate-ring .ogsplus-winrate-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+.ogsplus-winrate-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.85em;
+}
+.ogsplus-winrate-stats .ogsplus-wr-label {
+  font-weight: 700;
+  font-size: 0.95em;
+  margin-bottom: 2px;
+}
+.ogsplus-winrate-stats .win { color: #15803d; }
+.ogsplus-winrate-stats .loss { color: #b91c1c; }
+
+/* ---- SGF 업로드 버튼/모달 ---- */
+.ogsplus-sgf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #2f80ed;
+  color: #2f80ed;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85em;
+  margin: 4px 0;
+}
+.ogsplus-sgf-btn:hover { background: rgba(47,128,237,0.1); }
+.ogsplus-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ogsplus-modal {
+  background: var(--shade0, #fff);
+  color: var(--fg, inherit);
+  border-radius: 12px;
+  padding: 20px;
+  width: 480px;
+  max-width: 90vw;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+.ogsplus-modal h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ogsplus-modal .ogsplus-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.ogsplus-modal .ogsplus-tab {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(120,120,120,0.3);
+  cursor: pointer;
+  font-size: 0.85em;
+}
+.ogsplus-modal .ogsplus-tab.active {
+  background: #2f80ed;
+  color: white;
+  border-color: #2f80ed;
+}
+.ogsplus-modal input[type="text"] {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.ogsplus-game-list {
+  max-height: 260px;
+  overflow-y: auto;
+  border: 1px solid rgba(120,120,120,0.2);
+  border-radius: 8px;
+}
+.ogsplus-game-list-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85em;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(120,120,120,0.12);
+}
+.ogsplus-game-list-item:last-child { border-bottom: none; }
+.ogsplus-game-list-item:hover { background: rgba(47,128,237,0.1); }
+.ogsplus-game-list-item.selected { background: rgba(47,128,237,0.2); }
+.ogsplus-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* ---- 봇 랭크전 신청 헬퍼 ---- */
+.ogsplus-bot-helper {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 0.82em;
+  line-height: 1.5;
+}
+.ogsplus-bot-helper a.ogsplus-btn {
+  margin-top: 8px;
+}
+
+/* ---- About 헤딩 단축키 힌트 ---- */
+.ogsplus-heading-hint {
+  position: fixed;
+  z-index: 999999;
+  background: #1f2937;
+  color: #fff;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.ogsplus-heading-hint.show { opacity: 1; }
