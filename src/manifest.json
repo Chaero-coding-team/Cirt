@@ -55,7 +55,7 @@
     ],
     "js": [
       "lib/browser-polyfill.js",
-      "content/storage.js",
+      "lib/storage.js",
       "i18n/translations.js",
       "content/utils.js",
       "content/notice.js",
